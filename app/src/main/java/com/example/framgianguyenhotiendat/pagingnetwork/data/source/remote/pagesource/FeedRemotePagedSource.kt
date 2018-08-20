@@ -23,12 +23,11 @@ class FeedRemotePagedSource constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                         onError = {
-                            Log.d("xxxx", "error  = $it")
+
                         },
                         onSuccess = {
                             it.articles?.let { articles ->
                                 callback.onResult(articles, null, 2L)
-                                Log.d("xxxx", "init data  = " + articles[0].title)
                             }
                         }
                 )
@@ -37,21 +36,19 @@ class FeedRemotePagedSource constructor(
     /**
      * Execute in bg thread
      * Fetch next page of data
-     * "params.key" will have the updated value ( auto +1 ), Lib auto load data after item has this key
+     * "params.key" will have the updated value
      */
     override fun loadAfter(params: LoadParams<Long>, callback: LoadCallback<Long, Article>) {
-        Log.d("xxxx", "page key  = " + params.key)
         feedApi.fetchFeed("movie", "079dac74a5f94ebdb990ecf61c8854b7", params.key, params.requestedLoadSize)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                         onError = {
-                            Log.d("xxxx", "error  = $it")
+
                         },
                         onSuccess = {
                             it.articles?.let { articles ->
-                                callback.onResult(articles, params.key)
-                                Log.d("xxxx", "more data  = " + articles[0].title)
+                                callback.onResult(articles, params.key + 1)
                             }
                         }
                 )

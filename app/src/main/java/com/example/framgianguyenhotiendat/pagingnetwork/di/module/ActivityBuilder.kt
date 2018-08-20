@@ -1,6 +1,6 @@
 package com.example.framgianguyenhotiendat.pagingnetwork.di.module
 
-import com.example.framgianguyenhotiendat.pagingnetwork.ui.MainActivity
+import com.example.framgianguyenhotiendat.pagingnetwork.ui.apiload.ApiLoadActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -8,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    abstract fun contributeMainActivity(): ApiLoadActivity
 }

@@ -5,19 +5,19 @@ import com.google.gson.annotations.SerializedName
 
 data class Article(@SerializedName("author")
                    @Expose
-                   var author: String,
+                   var author: String = "",
                    @SerializedName("title")
                    @Expose
-                   var title: String,
+                   var title: String = "",
                    @SerializedName("description")
                    @Expose
-                   var description: String,
+                   var description: String = "",
                    @SerializedName("url")
                    @Expose
-                   var url: String,
+                   var url: String = "",
                    @SerializedName("urlToImage")
                    @Expose
-                   var urlToImage: String,
+                   var urlToImage: String = "",
                    @SerializedName("publishedAt")
                    @Expose
-                   var publishedAt: String)
+                   var publishedAt: String = "")

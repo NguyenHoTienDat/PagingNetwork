@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PagingNetwork</string>
+    <string name="action_navigate_api_load">Api Load Demo</string>
+    <string name="action_navigate_room_load">Room Db Load Demo</string>
 </resources>
