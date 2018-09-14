@@ -9,7 +9,7 @@ interface LocalDataSource {
 
     fun getPagedNotes(): DataSource.Factory<Int, Note>
 
-    fun insertNote(note: Note)
+    fun insertNote(note: Note): Single<Long>
 
     fun deleteNote(note: Note)
 

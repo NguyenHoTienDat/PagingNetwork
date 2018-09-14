@@ -15,7 +15,7 @@ interface AppDao {
     fun getPagedNotes(): DataSource.Factory<Int, Note>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertNote(note: Note)
+    fun insertNote(note: Note): Long
 
     @Delete
     fun deleteNote(note: Note)

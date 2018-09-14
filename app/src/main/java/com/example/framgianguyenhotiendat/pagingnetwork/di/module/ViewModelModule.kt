@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProvider
 import com.example.framgianguyenhotiendat.pagingnetwork.ui.ViewModelProviderFactory
 import com.example.framgianguyenhotiendat.pagingnetwork.ui.apiload.ApiLoadViewModel
 import com.example.framgianguyenhotiendat.pagingnetwork.ui.roomload.RoomLoadViewModel
+import com.example.framgianguyenhotiendat.pagingnetwork.ui.roomload.notelist.NotesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -25,4 +26,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RoomLoadViewModel::class)
     abstract fun bindRoomLoadViewModel(roomLoadViewModel: RoomLoadViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(NotesViewModel::class)
+    abstract fun bindNotesViewModel(notesViewModel: NotesViewModel): ViewModel
 }

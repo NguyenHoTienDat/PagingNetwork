@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ui.roomload.RoomLoadActivity" />
         <activity android:name=".ui.apiload.ApiLoadActivity" />
+        <activity android:name=".ui.loadmorewithoutpaging.LoadMoreActivity"></activity>
     </application>
 
 </manifest>

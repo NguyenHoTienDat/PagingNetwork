@@ -14,9 +14,7 @@ class AppRepository @Inject constructor(
 
     override fun getPagedNotes() = localSource.getPagedNotes()
 
-    override fun insertNote(note: Note) {
-        localSource.insertNote(note)
-    }
+    override fun insertNote(note: Note) = localSource.insertNote(note)
 
     override fun deleteNote(note: Note) {
         localSource.deleteNote(note)

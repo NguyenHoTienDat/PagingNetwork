@@ -14,12 +14,12 @@ class ApiLoadViewModel @Inject constructor(
     val articles: LiveData<PagedList<Article>>
 
     /**
-     * Need to be init in this block. If init articles = null and set aflter -> can"t get data
+     * Need to be init in this block. If init articles = null and set after -> can"t get data
      */
     init {
         //the config ( and the factory ), is used for Builder build PagedLiveData
         val pagedListConfig = PagedList.Config.Builder()
-                .setEnablePlaceholders(true) //holder when item doesn't fully load
+                .setEnablePlaceholders(false) //holder when item doesn't fully load
                 .setInitialLoadSizeHint(10) //size of item list in the first load
                 .setPrefetchDistance(50)
                 .setPageSize(10).build() //the number of item to be load

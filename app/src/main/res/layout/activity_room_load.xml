@@ -16,13 +16,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_note"
+        <LinearLayout
+            android:id="@+id/linear_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/dp_8"
-            app:itemDivider="@{ true }"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:background="@drawable/shape_edit_bg"
+                android:hint="Title"
+                android:padding="4dp" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edit_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:background="@drawable/shape_edit_bg"
+                android:hint="Descreption - NotUse"
+                android:padding="4dp" />
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fb_add_note"
@@ -30,7 +52,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:onClick="@{() -> viewModel.onAddNote(editTitle.getText().toString())}"
             android:src="@drawable/ic_add_circle"
+            app:rippleColor="@android:color/holo_green_dark"
+            app:useCompatPadding="true" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fb_view_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{() -> viewModel.viewNotes()}"
+            android:src="@drawable/ic_storage_black_24dp"
             app:rippleColor="@android:color/holo_green_dark"
             app:useCompatPadding="true" />
     </RelativeLayout>
